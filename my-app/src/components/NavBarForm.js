@@ -7,15 +7,15 @@ export class NavBarForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isLoggedIn: false,
+            isLoggedIn: true,
         };
     }
 
     handleClick = () => {
-        this.setState({
-            isLoggedIn: true,
-        });
-    };
+        this.setState((prevState) => ({
+            isLoggedIn: prevState.isLoggedIn ? false: true
+        }))
+    }
 
     render() {
         return (
